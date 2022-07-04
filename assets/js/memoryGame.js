@@ -92,8 +92,6 @@ function resetDisplay(id1,id2){
 
 
 
-
-
 function startAgain(){
     let cardBackOnGame = document.getElementsByClassName('cardBack');
     for (let i=0; i<cardBackOnGame.length; i++){
@@ -152,7 +150,9 @@ function startAgainLooser(){
     console.log(cardGroup)
     let cardGroupHTML = Array.from(cardGroup).map(el => el.outerHTML)
     let sortedCards = sort(cardGroupHTML);
-    sortedCards_to_html(sortedCards) 
+    sortedCards_to_html(sortedCards);
+    let timeLeft = document.getElementById("timer").innerText.slice(2,4); 
+    setScore(timeLeft)
     addEventsLiseners();
     startTimer(oneMinute, timeBox);
     return;
