@@ -14,6 +14,11 @@ let finalTime;
 let score = 180;
 let timer;
 let restartNumber = 0;
+let clickAudio = new Audio('./assets/sound/clcik.wav');
+let findNice = new Audio('./assets/sound/findNice.wav');
+let badCard = new Audio('./assets/sound/badCrd.wav');
+let winGame = new Audio('./assets/sound/winSound.wav');
+let looserGame = new Audio('./assets/sound/looser.wav');
 
 document.getElementById("puntuacion").innerText = score
 
@@ -27,18 +32,19 @@ function addEventsLiseners(){
         })
     }
 }
-
+    
 
 function flipCard(id){
     let cardIm = document.getElementById(id)
     cardIm.style.display = 'block';
-    
-    
+    clickAudio.play();
+
     if (flippedCard == 0){
         memory1 = id;
         class1 = cardIm.className;
         flippedCard++;
         return;
+        
     }
     
     if (flippedCard == 1){
@@ -47,8 +53,10 @@ function flipCard(id){
         flippedCard = 0;
         
         if (class1 == class2){      
+            findNice.play();
             console.log('son iguales');
         } else {
+            badCard.play();
             setTimeout(resetDisplay, 500, memory1, memory2);
         }  
     }
@@ -68,6 +76,7 @@ function flipCard(id){
     if (end == 12){
         let congrats =document.getElementById('congrats');
         congrats.style.display= 'block';
+        winGame.play();
         stopTimer();
         let timeLeft = document.getElementById("timer").innerText.slice(2,4);
         setScore(timeLeft);
@@ -182,6 +191,7 @@ function startTimer(duration, timeBox){
         
         if (--timer < 0) {
             timer = duration;
+            looserGame.play();
             stopTimer();
             gameOver();
             
