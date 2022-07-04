@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body> 
+    <header>
+        <div class="code_defenders"><img src="/assets/img/code_defenders_logo.png" alt=""></div>
+        <div class="menu-desplegable">
+           <input type="checkbox"  id="checkbox1">
+           <label for="checkbox1"><img src="./assets/img/menu_burger.png" class="icon-sandwich"></label>
+           <ul class="menu-options">
+               <li><a href="./index.html">INICIO</a></li>
+               <li>INSTRUCCIONES</li>
+           </ul>
+        </div>
+    </header>
+    <main class="imagen_fondo2">
+        <h2 id="congrats">FELICITACIONES! PASAS A LA SIGUIENTE RONDA <br /> <button id="continue" onclick="startAgain()">CONTINUAR</button></h2>
+        <div id="gameBox" onclick="startTimer(oneMinute, timeBox)">
+            <div class="card" id="card1"><div id="cardBack1" class="par1 cardBack"></div></div>
+            <div class="card" id="card2"><div id="cardBack2" class="par2 cardBack"></div></div>
+            <div class="card" id="card3"><div id="cardBack3" class="par3 cardBack"></div></div>
+            <div class="card" id="card4"><div id="cardBack4" class="par4 cardBack"></div></div>
+            <div class="card" id="card5"><div id="cardBack5" class="par5 cardBack"></div></div>
+            <div class="card" id="card6"><div id="cardBack6" class="par6 cardBack"></div></div>
+            <div class="card" id="card7"><div id="cardBack7" class="par3 cardBack"></div></div>
+            <div class="card" id="card8"><div id="cardBack8" class="par1 cardBack"></div></div>
+            <div class="card" id="card9"><div id="cardBack9" class="par6 cardBack"></div></div>
+            <div class="card" id="card10"><div id="cardBack10" class="par5 cardBack"></div></div>
+            <div class="card" id="card11"><div id="cardBack11" class="par2 cardBack"></div></div>
+            <div class="card" id="card12"><div id="cardBack12" class="par4 cardBack"></div></div>
+        </div>
+            <div id="gameOver2"><h1>¡Perdiste!</h1>
+                <button id="tryAgain" onclick="startAgainLooser()">Empezar de nuevo</button>
+            </div>
+        <div class="contador">
+            <div class="square">Nombre</div>
+            <div class="square">Puntuacion
+            <br /><span id="puntuacion"></span></div>
+            <div class="square">Tiempo
+            <br /><span id="timer">1:00</span></div>
+        <div>
+    </main>
+
+    <footer>
+        <div class="redes-sociales">
+            <img src="./assets/img/msaje.jpg">
+            <img src="./assets/img/instagram.jpg">
+            <img src="./assets/img/facebook.png">
+            <img src="./assets/img/twitter.png">
+        </div>
+    </footer>
+
+    <script src="./assets/js/memoryGame.js" ></script>
+</body>
+</html>
