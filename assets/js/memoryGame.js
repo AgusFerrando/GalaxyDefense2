@@ -1,6 +1,7 @@
 let cardGroup = document.getElementsByClassName('card');
 let cardBack = document.getElementsByClassName('cardBack');
 let gameBox = document.getElementById('gameBox');
+let cardQuantity = 4;
 let flippedCard = 0;
 let memory1;
 let memory2;
@@ -58,14 +59,14 @@ function flipCard(id){
     class2= "";
     
     end = 0;
-    for (let i=0; i<12; i++){
+    for (let i = 0; i < cardQuantity; i++) {
         let cardsArray = document.getElementsByClassName('cardBack')
         if (cardsArray[i].style.display == 'block'){
             end++;
         } 
         
     }
-    if (end == 12){
+    if (end == cardQuantity){
         let congrats =document.getElementById('congrats');
         congrats.style.display= 'block';
         stopTimer();
@@ -81,9 +82,13 @@ function resetDisplay(id1,id2){
 
 
 
+
+
+
 function startAgain(){
-    for (let i=0; i<cardBack.length; i++){
-        cardBack[i].style.display = "none";
+    let cardBackOnGame = document.getElementsByClassName('cardBack');
+    for (let i=0; i<cardBackOnGame.length; i++){
+        cardBackOnGame[i].style.display = "none";
     }
     document.getElementById('congrats').style.display= "none";
     flippedCard = 0;
@@ -98,18 +103,25 @@ function startAgain(){
         roundTwo();
         restartNumber++;
       
-    } else {
+    } else if ( restartNumber == 1) {
 
         roundThree();
         console.log('hola');
-        restartNumber= 0;
+        restartNumber++;
+
+    } else if ( restartNumber == 2) {
+
+        roundFour();
+        console.log('hola');
     }
-    console.log(cardGroup)
-    let cardGroupHTML = Array.from(cardGroup).map(el => el.outerHTML)
+    let cardGroupOnGame = document.getElementsByClassName('card');
+    let cardGroupHTML = Array.from(cardGroupOnGame).map(el => el.outerHTML)
     let sortedCards = sort(cardGroupHTML);
-    sortedCards_to_html(sortedCards) 
+    sortedCards_to_html(sortedCards);
     addEventsLiseners();
+    console.log(sortedCards);
     startTimer(oneMinute, timeBox);
+    cardQuantity +=4;
     return;
 }
 
@@ -128,16 +140,6 @@ function startAgainLooser(){
     class2 = "";
     gameOverStartAgain();
 
-    if ( restartNumber == 2){
-        roundTwo();
-        restartNumber--;
-      
-    } /* else {
-
-        roundThree();
-        console.log('hola');
-        restartNumber= 0;
-    } */
     console.log(cardGroup)
     let cardGroupHTML = Array.from(cardGroup).map(el => el.outerHTML)
     let sortedCards = sort(cardGroupHTML);
@@ -147,6 +149,8 @@ function startAgainLooser(){
     return;
 }
 
+
+ 
 function sort(arr) {
     let num = arr.length;
     let temp;
@@ -220,13 +224,23 @@ function gameOverStartAgain(){
 }
 
 function roundTwo(){
-    gameBox.innerHTML+= `<div class='card' id='card13'><div id='cardBack13' class='par7 cardBack'></div></div>
-                        <div class='card' id='card14'><div id='cardBack14' class='par7 cardBack'></div></div>`
-    
+    gameBox.innerHTML+= `<div class="card" id="card5"><div id="cardBack5" class="par3 cardBack"></div></div>
+                        <div class="card" id="card6"><div id="cardBack6" class="par3 cardBack"></div></div>
+                        <div class="card" id="card7"><div id="cardBack7" class="par4 cardBack"></div></div>
+                        <div class="card" id="card8"><div id="cardBack8" class="par4 cardBack"></div></div>`
 }
 
 function roundThree(){
+    gameBox.innerHTML+=`<div class="card" id="card9"><div id="cardBack9" class="par5 cardBack"></div></div>
+                        <div class="card" id="card10"><div id="cardBack10" class="par5 cardBack"></div></div>
+                        <div class="card" id="card11"><div id="cardBack11" class="par6 cardBack"></div></div>
+                        <div class="card" id="card12"><div id="cardBack12" class="par6 cardBack"></div></div>`
+}
+
+function roundFour(){
     console.log("pase por aqui")
     gameBox.innerHTML+= `<div class="card" id="card15"><div id="cardBack15" class="par8 cardBack"></div></div>
-                        <div class="card" id="card16"><div id="cardBack16" class="par8 cardBack"></div></div>`
+                        <div class="card" id="card16"><div id="cardBack16" class="par8 cardBack"></div></div>
+                        <div class='card' id='card13'><div id='cardBack13' class='par7 cardBack'></div></div>
+                        <div class='card' id='card14'><div id='cardBack14' class='par7 cardBack'></div></div>`
 }
