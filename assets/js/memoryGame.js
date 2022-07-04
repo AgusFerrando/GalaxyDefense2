@@ -10,9 +10,9 @@ let class2;
 let end = 0;
 let timeBox = document.getElementById('timer');
 let interval;
-let oneMinute = 60 * 1;
+let oneMinute = 30 * 1;
 let finalTime;
-let score = 180;
+let score = 120;
 let timer;
 let restartNumber = 0;
 let clickAudio = new Audio('./assets/sound/clcik.wav');
@@ -216,7 +216,7 @@ function startTimer(duration, timeBox){
 
 function setScore(timeLeft){
     
-    scoreRestar = 60 - parseInt(timeLeft);
+    scoreRestar = 30 - parseInt(timeLeft);
     
     score = score - scoreRestar;
 
