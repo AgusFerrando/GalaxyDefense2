@@ -2,18 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/index', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
 /* GET game page. */
 router.get('/game', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('game');
 });
 
-/* GET ranking. */
 router.get('/ranking', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('Aqui ira el ranking');
 });
+
 
 module.exports = router;

@@ -15,11 +15,11 @@ let finalTime;
 let score = 120;
 let timer;
 let restartNumber = 0;
-let clickAudio = new Audio('./assets/sound/clcik.wav');
-let findNice = new Audio('./assets/sound/findNice.wav');
-let badCard = new Audio('./assets/sound/badCrd.wav');
-let winGame = new Audio('./assets/sound/winSound.wav');
-let looserGame = new Audio('./assets/sound/looser.wav');
+let clickAudio = new Audio('../sound/clcik.wav');
+let findNice = new Audio('../sound/findNice.wav');
+let badCard = new Audio('../sound/badCrd.wav');
+let winGame = new Audio('../sound/winSound.wav');
+let looserGame = new Audio('../sound/looser.wav');
 
 document.getElementById("puntuacion").innerText = score
 
