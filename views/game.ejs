@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Page</title>
-    <link rel="stylesheet" href='/stylesheets/style.css'>
-</head>
+<%- include('head'); %> 
 <body> 
     <header>
         <div class="code_defenders"><img src="../public/images/code_defenders_logo.png" alt=""></div>
@@ -38,16 +30,7 @@
             <br /><span id="timer">0:30</span></div>
         <div>
     </main>
-
-    <footer>
-        <div class="redes-sociales">
-            <img src="../public/images/msaje.jpg">
-            <img src="../public/images/instagram.jpg">
-            <img src="../public/images/facebook.png">
-            <img src="../public/images/twitter.png">
-        </div>
-    </footer>
-
+    <%- include('footer'); %> 
     <script src="../public/javascripts/memoryGame.js" ></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ header {
   display: flex;
   flex-direction: row;
   text-align: center;
-  background-image: url(./public/images/barra_header.png);
+  background-image: url(../images/barra_header.png);
   background-size: cover;
   padding: 0px;
   margin: 0px;
