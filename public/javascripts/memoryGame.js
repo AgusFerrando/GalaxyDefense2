@@ -15,11 +15,11 @@ let finalTime;
 let score = 120;
 let timer;
 let restartNumber = 0;
-let clickAudio = new Audio('./public/sound/clcik.wav');
-let findNice = new Audio('./public/sound/findNice.wav');
-let badCard = new Audio('./public/sound/badCrd.wav');
-let winGame = new Audio('./public/sound/winSound.wav');
-let looserGame = new Audio('./public/sound/looser.wav');
+let clickAudio = new Audio('/sound/clcik.wav');
+let findNice = new Audio('/sound/findNice.wav');
+let badCard = new Audio('/sound/badCrd.wav');
+let winGame = new Audio('/sound/winSound.wav');
+let looserGame = new Audio('/sound/looser.wav');
 
 document.getElementById("puntuacion").innerText = score
 
@@ -120,6 +120,14 @@ function startAgain(){
 
         roundFour();
         console.log('hola');
+        restartNumber++;
+
+    } else if ( restartNumber == 3) {
+
+        endOfgame();
+        return;
+       
+        
     }
     let cardGroupOnGame = document.getElementsByClassName('card');
     let cardGroupHTML = Array.from(cardGroupOnGame).map(el => el.outerHTML)
@@ -253,4 +261,9 @@ function roundFour(){
                         <div class="card" id="card16"><div id="cardBack16" class="par8 cardBack"></div></div>
                         <div class='card' id='card13'><div id='cardBack13' class='par7 cardBack'></div></div>
                         <div class='card' id='card14'><div id='cardBack14' class='par7 cardBack'></div></div>`
+}
+
+function endOfgame(){
+    let endBox = document.getElementById("endBox")
+        endBox.style.display = "flex";
 }

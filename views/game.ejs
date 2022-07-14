@@ -1,10 +1,10 @@
 <%- include('head'); %> 
 <body> 
     <header>
-        <div class="code_defenders"><img src="../public/images/code_defenders_logo.png" alt=""></div>
+        <div class="code_defenders"><img src="/images/code_defenders_logo.png" alt=""></div>
         <div class="menu-desplegable">
            <input type="checkbox"  id="checkbox1">
-           <label for="checkbox1"><img src="../public/images/menu_burger.png" class="icon-sandwich"></label>
+           <label for="checkbox1"><img src="/images/menu_burger.png" class="icon-sandwich"></label>
            <ul class="menu-options">
                <li><a href="/index.ejs">INICIO</a></li>
                <li>INSTRUCCIONES</li>
@@ -22,6 +22,9 @@
             <div id="gameOver2"><h1>¡Perdiste!</h1>
                 <button id="tryAgain" onclick="startAgainLooser()">Empezar de nuevo</button>
             </div>
+            <div id="endBox"><h1>¡Juego Finalizado!</h1>
+                <button id="goToRanking"><a href="/ranking">Ver ranking</a></button>
+            </div>
         <div class="contador">
             <div class="square">Nombre</div>
             <div class="square">Puntuacion
@@ -31,6 +34,6 @@
         <div>
     </main>
     <%- include('footer'); %> 
-    <script src="../public/javascripts/memoryGame.js" ></script>
+    <script src="/javascripts/memoryGame.js" ></script>
 </body>
 </html>

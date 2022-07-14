@@ -2,11 +2,11 @@
   <body>
     <header>
       <div class="code_defenders">
-        <img src="../public/images/code_defenders_logo.png" alt="" />
+        <img src="/images/code_defenders_logo.png" alt="" />
       </div>
       <div class="menu-desplegable">
         <input type="checkbox" id="checkbox1"/>
-        <label for="checkbox1"><img src="../public/images/menu_burger.png" class="icon-sandwich"/></label>
+        <label for="checkbox1"><img src="/images/menu_burger.png" class="icon-sandwich"/></label>
         <ul class="menu-options">
           <li>SOBRE NOSOTROS</li>
           <li>CONTACTANOS</li>
@@ -16,18 +16,18 @@
   
       <main class="imagen_fondo">
         <div class="logo_galaxy2">
-          <img src="../public/images/LOGO.png" alt="" />
+          <img src="/images/LOGO.png" alt="" />
         </div>
   
       <aside>
         <div class="columna_izq">
           <div class="log_in">
             <h2>LOGIN</h2>
-            <div class="formularioLogIn">
+            <form class="formularioLogIn">
                 <input type="text" placeholder="usuario" id="usuarioLog" />
                 <input type="text" placeholder="contraseña" id="passwordLog" />
                 <button>A JUGAR!</button>
-            </div>
+            </form>
           </div>
         </div>
       </aside>
@@ -36,17 +36,19 @@
         <div class="columna_rigth">
           <div class="sign_up">
             <h2>SIGN UP</h2>
-            <div class="formularioSignUp">
-                <input type="text" placeholder="nombre" name="" id="nombreSign" />
-                <input type="text" placeholder="usuario" id="usuarioSign" />
-                <input type="text" placeholder="correo" id="correoSign" />
-                <input type="text" placeholder="contraseña" id="passwordSign" />
-                <button>INGRESAR</button>
-            </div>
+            <form id="signUp" name="signUp" class="formularioSignUp">
+                <input type="text" placeholder="nombre" name="name" id="nombreSign" />
+                <input type="text" placeholder="usuario" name="username" id="usuarioSign" />
+                <input type="text" placeholder="correo" name="mail" id="correoSign" />
+                <input type="text" placeholder="contraseña" name="password" id="passwordSign" />
+                <button type="submit" >INGRESAR</button>
+            </form>
           </div>
         </div>
       </aside>
     </main>
+
+    <script src="/javascripts/login.js" ></script>
 
     <%- include('footer'); %> 
   </body>
