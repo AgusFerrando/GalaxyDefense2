@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: "SOBRE NOSOTROS" });
 });
 
 /* router.post('/signup', function(req,res,next){
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 /* GET game page. */
 router.get('/game', function(req, res, next) {
-  res.render('game');
+  res.render('game', { title: "INICIO"});
 });
 
 router.get('/ranking', function(req, res, next) {
