@@ -36,13 +36,13 @@
         <div class="columna_rigth">
           <div class="sign_up">
             <h2>SIGN UP</h2>
-            <div class="formularioSignUp">
-                <input type="text" placeholder="nombre" name="" id="nombreSign" />
-                <input type="text" placeholder="usuario" id="usuarioSign" />
-                <input type="text" placeholder="correo" id="correoSign" />
-                <input type="text" placeholder="contraseña" id="passwordSign" />
-                <button>INGRESAR</button>
-            </div>
+            <form id="signUp" name="signUp" class="formularioSignUp" method="POST">
+                <input type="text" placeholder="nombre" name="name" id="nombreSign" />
+                <input type="text" placeholder="usuario" name="username" id="usuarioSign" />
+                <input type="text" placeholder="correo" name="mail" id="correoSign" />
+                <input type="text" placeholder="contraseña" name="password" id="passwordSign" />
+                <input type="button" value="INGRESAR" onclick="submitSignUp()"/>
+            </form>
           </div>
         </div>
       </aside>
