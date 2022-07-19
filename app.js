@@ -1,3 +1,7 @@
+import { loginRouter } from './routes/login';
+import './middlewares/google.js'
+
+passportJs.authenticate(nomMiddelware, configuraciones);
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -18,9 +22,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use(
+  '/auth',
+  passport.autheticate("auth-google", {
+    scope: [
+      "https://wwww.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile",
+    ],
+    session: false,
+  }),
+    
+  loginRouter
+  );
 // app.use('/ranking', rankingRouter)
 
 // catch 404 and forward to error handler
