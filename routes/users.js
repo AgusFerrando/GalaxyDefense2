@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const crear= require('../model/database.js')
 let usersMap = new Map()
 
 /* GET users listing. */
@@ -10,9 +11,13 @@ router.get('/', function(req, res, next) {
 router.post('/signup', function(req,res,next){
   let user = req.body
   console.log(user)
-  usersMap.set(`${user.mail}`,user)
-  res.json({userRegistered: usersMap.get(`${user.name}`),
-            mapSize: usersMap.size })
+  crear(user)
+}) 
+
+router.post('/login', function(req,res,next){
+  let user = req.body
+  console.log(user)
+  comparar(user)
 }) 
 
 module.exports = router;
