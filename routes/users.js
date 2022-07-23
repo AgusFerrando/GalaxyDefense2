@@ -17,11 +17,6 @@ router.post('/signup', function(req,res,next){
 
 router.post('/login', function(req,res,next){
   let auth = comparar(req, res)
-  if(auth){
-    console.log(res.body)
-    res.redirect("http://localhost:3000/game")
-  }
-  
 }) 
 
 module.exports = router;
