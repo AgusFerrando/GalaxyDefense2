@@ -113,7 +113,6 @@ function startAgain(){
     } else if ( restartNumber == 1) {
 
         roundThree();
-        console.log('hola');
         restartNumber++;
 
     } else if ( restartNumber == 2) {

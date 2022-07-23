@@ -1,20 +1,47 @@
 <%- include('head'); %> 
   <body>
+<<<<<<< HEAD
     
     <%- include('header'); %> 
       <main class="imagen_fondo">
         <div class="logo_galaxy2">
           <img src="/images/LOGO.png" alt="" />
+=======
+    <header>
+      <div class="code_defenders">
+        <img src="../images/code_defenders_logo.png" alt="" />
+      </div>
+      <div class="menu-desplegable">
+        <input type="checkbox" id="checkbox1"/>
+        <label for="checkbox1"><img src="../images/menu_burger.png" class="icon-sandwich"/></label>
+        <ul class="menu-options">
+          <li>SOBRE NOSOTROS</li>
+          <li>CONTACTANOS</li>
+        </ul>
+      </div>
+    </header>
+  
+      <main class="imagen_fondo">
+        <div class="logo_galaxy2">
+          <img src="../images/LOGO.png" alt="" />
+>>>>>>> Agus
         </div>
   
       <aside>
         <div class="columna_izq">
           <div class="log_in">
             <h2>LOGIN</h2>
+<<<<<<< HEAD
             <form class="formularioLogIn">
                 <input type="text" placeholder="usuario" id="usuarioLog" />
                 <input type="text" placeholder="contraseña" id="passwordLog" />
                 <button>A JUGAR!</button>
+=======
+            <form class="formularioLogIn" name="logIn" id="logIn">
+                <input type="text" placeholder="usuario" id="usename" name="username"/>
+                <input type="text" placeholder="contraseña" id="password" name="password" />
+                <input type="button" onclick="submitLogIn()">A JUGAR!</button>
+>>>>>>> Agus
             </form>
           </div>
         </div>
@@ -24,12 +51,20 @@
         <div class="columna_rigth">
           <div class="sign_up">
             <h2>SIGN UP</h2>
+<<<<<<< HEAD
             <form id="signUp" name="signUp" class="formularioSignUp">
+=======
+            <form id="signUp" name="signUp" class="formularioSignUp" method="POST">
+>>>>>>> Agus
                 <input type="text" placeholder="nombre" name="name" id="nombreSign" />
                 <input type="text" placeholder="usuario" name="username" id="usuarioSign" />
                 <input type="text" placeholder="correo" name="mail" id="correoSign" />
                 <input type="text" placeholder="contraseña" name="password" id="passwordSign" />
+<<<<<<< HEAD
                 <button type="submit" >INGRESAR</button>
+=======
+                <input type="button" value="INGRESAR" onclick="submitSignUp()"/>
+>>>>>>> Agus
             </form>
           </div>
         </div>
@@ -39,5 +74,6 @@
     <script src="/javascripts/login.js" ></script>
 
     <%- include('footer'); %> 
+    <script src="../javascripts/login.js"></script>
   </body>
 </html>
