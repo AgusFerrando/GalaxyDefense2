@@ -113,13 +113,11 @@ function startAgain(){
     } else if ( restartNumber == 1) {
 
         roundThree();
-        console.log('hola');
         restartNumber++;
 
     } else if ( restartNumber == 2) {
 
         roundFour();
-        console.log('hola');
     }
     let cardGroupOnGame = document.getElementsByClassName('card');
     let cardGroupHTML = Array.from(cardGroupOnGame).map(el => el.outerHTML)

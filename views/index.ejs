@@ -23,11 +23,11 @@
         <div class="columna_izq">
           <div class="log_in">
             <h2>LOGIN</h2>
-            <div class="formularioLogIn">
-                <input type="text" placeholder="usuario" id="usuarioLog" />
-                <input type="text" placeholder="contraseña" id="passwordLog" />
-                <button>A JUGAR!</button>
-            </div>
+            <form class="formularioLogIn" name="logIn" id="logIn">
+                <input type="text" placeholder="usuario" id="usename" name="username"/>
+                <input type="text" placeholder="contraseña" id="password" name="password" />
+                <input type="button" onclick="submitLogIn()">A JUGAR!</button>
+            </form>
           </div>
         </div>
       </aside>
