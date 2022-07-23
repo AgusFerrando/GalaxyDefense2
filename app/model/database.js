@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const {encrypt, compare} = require ('../controller/authController')
-
+const tokenSession = require ('./generateToken')
 
 
 const url = 'mongodb://localhost/galaxyDefense'
@@ -15,14 +15,15 @@ mongoose.connect(url, {
   .then( ()=> console.log('Conected to mongo'))
   .catch( (e)=> console.log('error' + e))
   
-  const usuariosSchema = mongoose.Schema({
+const usuariosSchema = mongoose.Schema({
     name: String,
     username: String,
     mail: String,
-    password: String
+    password: String,
+    score: Number
   })
   
-  const UsuariosModel = mongoose.model('usuarios', usuariosSchema)
+const UsuariosModel = mongoose.model('usuarios', usuariosSchema)
   
   
 var crear = async (user)=>{
@@ -50,7 +51,7 @@ var comparar = async (req,res)=>{
       res.send({ error: 'User not found'})
     }
     const checkPassword = await compare (password, user.password)
-    //const tokenSession = await tokenSign(user)
+    const tokenSession = await tokenSign(user)
     if (checkPassword){
       res.send({
         data: user
@@ -68,7 +69,15 @@ var comparar = async (req,res)=>{
   }
 };
 
+var actualizarScore = async (username) => {
+  const usuario = await UsuariosModel.updateOne({__username:username},
+  {
+    $set:{
+      score: data
+    }
+  })
+}
   
     
  
-module.exports = {crear, comparar}
+module.exports = {crear, comparar, actualizarScore}

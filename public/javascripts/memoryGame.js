@@ -262,7 +262,11 @@ function roundFour(){
                         <div class='card' id='card14'><div id='cardBack14' class='par7 cardBack'></div></div>`
 }
 
+let finalScore= 0;
 function endOfgame(){
     let endBox = document.getElementById("endBox")
         endBox.style.display = "flex";
+    let temp = document.getElementById('puntuacion').innerText;
+    finalScore = parseInt(temp);
+    console.log(finalScore);
 }
