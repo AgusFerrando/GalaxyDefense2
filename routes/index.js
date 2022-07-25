@@ -7,11 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: "SOBRE NOSOTROS" });
 });
 
-/* router.post('/signup', function(req,res,next){
-  let user = req.body
-  let usersMap = new Map([`${user.name}`],[user])
-  res.json({userRegistered: usersMap[user.name]})
-}) */
 
 /* GET game page. */
 router.get('/game', function(req, res, next) {
