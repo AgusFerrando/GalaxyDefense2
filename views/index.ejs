@@ -12,7 +12,7 @@
           <div class="log_in">
             <h2>LOGIN</h2>
             <form class="formularioLogIn" name="logIn" id="logIn">
-                <input type="text" placeholder="usuario" id="email" name="email"/>
+                <input type="text" placeholder="usuario" id="usename" name="username"/>
                 <input type="password" placeholder="contraseña" id="password" name="password" />
                 <input type="button" onclick="submitLogIn()">A JUGAR!</button>
             </form>
@@ -26,9 +26,10 @@
             <h2>SIGN UP</h2>
             <form id="signUp" name="signUp" class="formularioSignUp" method="POST">
                 <input type="text" placeholder="nombre" name="name" id="nombreSign" />
-                <input type="text" placeholder="correo" name="email" id="correoSign" />
+                <input type="text" placeholder="usuario" name="username" id="usuarioSign" />
+                <input type="text" placeholder="correo" name="mail" id="correoSign" />
                 <input type="password" placeholder="contraseña" name="password" id="passwordSign" />
-                <a href="/game"></a><input type="button" value="INGRESAR" onclick="submitSignUp()"/></a>
+                <input type="button" value="INGRESAR" onclick="submitSignUp()"/>
             </form>
           </div>
         </div>
