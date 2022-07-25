@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getItem, getItems, createItem, updateItem, deleteItem } from '../controlles/users.js'
+const { getItems, getItem, createItem, deleteItem, updateItem } = require('../controlles/users')
 import checkOrigin from '../middleware/origin.js'
 import checkAuth from '../middleware/auth.js'
 import checkRoleAuth from '../middleware/roleAuth.js'

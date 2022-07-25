@@ -11,4 +11,4 @@ router.post('/login', loginCtrl)
 router.post('/signup', registerCtrl)
 
 
-module.exports = router
+export default router

@@ -1,5 +1,5 @@
 import Router from 'express';
-import actualizarScore from '../controlles/users.js'
+const { actualizarScore } = require('../controlles/users')
 var router = Router();
 
 

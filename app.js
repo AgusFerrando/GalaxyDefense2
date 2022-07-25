@@ -1,5 +1,6 @@
 import createError from 'http-errors';
-import {express, json, urlencoded, static as statico} from 'express';
+import pkg from 'express';
+const {express, json, urlencoded, static: statico} = pkg;
 import { join } from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
@@ -7,7 +8,6 @@ import logger from 'morgan';
 import authRouts from './app/routes/auth.js';
 import userRouts from './app/routes/user.js';
 import scoreRouts from './app/routes/score.js';
-import { getMaxListeners } from 'process';
 
 var app = express();
 
@@ -40,5 +40,5 @@ app.use(function(req, res, next) {
 
 
 
-export default app;
+export default { app };
 
