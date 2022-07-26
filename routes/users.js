@@ -1,3 +1,4 @@
+const { res, req, response } = require('express');
 var express = require('express');
 const { redirect } = require('express/lib/response');
 var router = express.Router();
@@ -9,18 +10,16 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-// router.post('/signup', function(req,res,next){
-//   crear(req, res)
-// }) 
 
-router.post('/signup', authController.crear);
+router.post('/signup', (req, res) => authController.crear(req, res));
+
+
+router.post('/login',(req, res)=> authController.comparar(req, res));
 
 
 // router.post('/login', function(req,res,next){
 //   let auth = comparar(req, res)
 // }) 
-
-router.post('/login', authController.comparar);
 
 
 module.exports = router;

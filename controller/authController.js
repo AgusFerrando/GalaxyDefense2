@@ -1,6 +1,6 @@
-const res = require('express/lib/response')
 const {encrypt, compare} = require ('../controller/encrypt')
-const UsuariosModel = require('../model/database')
+const { UsuariosModel } = require('../model/database')
+
   
 
 // var crear = async (user)=>{
@@ -17,6 +17,7 @@ const UsuariosModel = require('../model/database')
 // }
 
 var crear = async (req, res)=>{
+    console.log(req.session)
     const passwordHash = await encrypt(req.body.password)
     const usuario = new UsuariosModel({
         name: req.body.name,
@@ -24,13 +25,9 @@ var crear = async (req, res)=>{
         mail: req.body.mail,
         password: passwordHash
         })
-        usuario.save()
-        .then(result => {
-            res.redirect('/game')
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        await usuario.save()
+        req.session.isAuth = true    // true cuando crea el usuario
+        res.redirect('/game')
     }
 
 
@@ -46,22 +43,30 @@ var comparar = async (req,res)=>{
         res.send({ error: 'User not found'})
     }
     const checkPassword = await compare (password, user.password)
-    //const tokenSession = await tokenSign(user)
-    if (checkPassword){
-        res.redirect('/game')
-        return true
-    }
+    
+    
+    
     if (!checkPassword) {
         res.send({
-        error:'Invalid Password'
+            error:'Invalid Password'
         })
         return false
     }
+    req.session.isAuth = true  //true cuando se logra el login
+    res.redirect('/game')
     }
     catch(err){
     console.log(err)
     }
 };
 
+const isAuth = (req, res, next) => {     //middelware para que si las condiciones anteriores son verdaderas
+    if(req.session.isAuth){                //me redirija al juego, sino de nuevo al login
+      next()  
+    } else {
+        res.redirect('/')
+    }
+}
 
-module.exports = {crear, comparar}
+
+module.exports = {crear, comparar, isAuth}

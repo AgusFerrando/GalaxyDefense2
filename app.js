@@ -1,8 +1,10 @@
 var createError = require('http-errors');
 var express = require('express');
+const session = require('express-session')  //sesion de express
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const { store } = require('./model/database') //importo el store para guardar la sesion en cookie
 
 
 var indexRouter = require('./routes/index');
@@ -23,6 +25,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
+  store: store,
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
