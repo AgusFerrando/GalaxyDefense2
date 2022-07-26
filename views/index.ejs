@@ -11,10 +11,10 @@
         <div class="columna_izq">
           <div class="log_in">
             <h2>LOGIN</h2>
-            <form class="formularioLogIn" name="logIn" id="logIn">
+            <form class="formularioLogIn" name="logIn" id="logIn" method="POST" action="/users/login">
                 <input type="text" placeholder="usuario" id="usename" name="username"/>
                 <input type="password" placeholder="contraseña" id="password" name="password" />
-                <input type="button" onclick="submitLogIn()">A JUGAR!</button>
+                <input type="submit" id="btnLogIn" >A JUGAR!</button>
             </form>
           </div>
         </div>
@@ -24,21 +24,19 @@
         <div class="columna_rigth">
           <div class="sign_up">
             <h2>SIGN UP</h2>
-            <form id="signUp" name="signUp" class="formularioSignUp" method="POST">
+            <form id="signUp" name="signUp" class="formularioSignUp" method="POST" action="/users/signup">
                 <input type="text" placeholder="nombre" name="name" id="nombreSign" />
                 <input type="text" placeholder="usuario" name="username" id="usuarioSign" />
                 <input type="text" placeholder="correo" name="mail" id="correoSign" />
                 <input type="password" placeholder="contraseña" name="password" id="passwordSign" />
-                <input type="button" value="INGRESAR" onclick="submitSignUp()"/>
+                <input type="submit" value="INGRESAR" id="btnSignUp" />
             </form>
           </div>
         </div>
       </aside>
     </main>
 
-    <script src="/javascripts/login.js" ></script>
-
     <%- include('footer'); %> 
-    <script src="../javascripts/login.js"></script>
+    <script src="../javascripts/login.js" type="module"></script>
   </body>
 </html>

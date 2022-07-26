@@ -121,7 +121,7 @@ header ul li:hover {
   left: 0;
   top: 10em;
 }
-
+}
 .formularioLogIn {
   display: none;
   position: absolute;
@@ -314,7 +314,7 @@ footer {
   background-size: cover;
   padding: 0px;
 }
-}
+
 
 .imagen_fondo2 {
     background-image: url(../images//fondo_desktop.png);
