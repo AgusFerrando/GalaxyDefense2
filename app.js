@@ -26,9 +26,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false,
+  secret: 'secret',    //string, firma la cookie q se guarda en el browser
+  resave: false,       //Fuerza que se guarde la sesion
+  saveUninitialized: false,  //Fuerza a la sesion que no ha sido inicializada a guardarse
   store: store,
 }))
 

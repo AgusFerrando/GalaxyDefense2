@@ -42,9 +42,8 @@ var comparar = async (req,res)=>{
         res.status(404)
         res.send({ error: 'User not found'})
     }
+    
     const checkPassword = await compare (password, user.password)
-    
-    
     
     if (!checkPassword) {
         res.send({
