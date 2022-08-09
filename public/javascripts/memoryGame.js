@@ -124,8 +124,7 @@ function startAgain(){
     } else if ( restartNumber == 3) {
 
         endOfgame();
-        return;
-       
+        return;   
         
     }
     let cardGroupOnGame = document.getElementsByClassName('card');

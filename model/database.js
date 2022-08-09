@@ -42,6 +42,9 @@ const usuariosSchema = mongoose.Schema({
       type: String,
       required: true
     },
+    score:{
+      type: Number
+    }
   });
   
   

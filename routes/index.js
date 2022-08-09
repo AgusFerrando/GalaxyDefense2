@@ -1,4 +1,5 @@
 var express = require('express');
+const session = require('express-session');
 var router = express.Router();
 const { isAuth } = require('../controller/authController')
 
@@ -12,12 +13,13 @@ router.get('/', function(req, res, next) {
 
 /* GET game page. */
 router.get('/game', (req, res, next) => isAuth(req, res, next), (req, res) => {  //midelware para que solo jueguen los registrados
-  res.render('game', { title: "SALIR"});
+  res.render('game', { title: "INICIO", userName: req.session.username });
 });
 
 
 router.get('/ranking', function(req, res, next) {
-  res.render('ranking');
+  let usersFromMongo = 
+  res.render('ranking', {users: usersFromMongo});
 });
 
 

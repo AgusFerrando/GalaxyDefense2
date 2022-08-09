@@ -1,6 +1,11 @@
 <%- include('head'); %> 
 <body> 
     <%- include('header'); %> 
+    <div class="userBox">
+        <form action="/users/logout" method="POST">
+            <button>LOGOUT</button>
+        </form>
+    </div>
     <main class="imagen_fondo2">
         <h2 id="congrats">FELICITACIONES! PASAS A LA SIGUIENTE RONDA <br /> <button id="continue" onclick="startAgain()">CONTINUAR</button></h2>
         <div id="gameBox" onclick="startTimer(oneMinute, timeBox)">
@@ -13,10 +18,10 @@
                 <button id="tryAgain" onclick="startAgainLooser()">Empezar de nuevo</button>
             </div>
             <div id="endBox"><h1>¡Juego Finalizado!</h1>
-                <button id="goToRanking"><a href="/ranking">Ver ranking</a></button>
+                <button id="goToRanking">Ver ranking</a></button>
             </div>
         <div class="contador">
-            <div class="square">Nombre</div>
+            <div class="square">Nombre: <br /><%= userName %></div>
             <div class="square">Puntuacion
             <br /><span id="puntuacion"></span></div>
             <div class="square">Tiempo
@@ -25,5 +30,6 @@
     </main>
     <%- include('footer'); %> 
     <script src="../javascripts/memoryGame.js" ></script>
+    <script src="../javascripts/scoreService.js" ></script>
 </body>
 </html>
