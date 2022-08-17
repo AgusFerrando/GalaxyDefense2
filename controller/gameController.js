@@ -12,4 +12,10 @@ const actualizar = async (req, res) =>{
         res.redirect('/ranking')
 }
 
-module.exports = actualizar
+const mostrar = async (req, res) => {
+    let data = await UsuariosModel.find({})
+    data.sort((a,b) => b.score - a.score)
+    res.render('ranking', {users: data});
+}
+
+module.exports = { actualizar, mostrar }

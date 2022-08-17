@@ -4,7 +4,7 @@ const { redirect } = require('express/lib/response');
 var router = express.Router();
 const {crear, comparar} = require('../controller/authController')
 const authController = require('../controller/authController')
-const actualizar = require ('../controller/gameController')
+const {actualizar} = require ('../controller/gameController')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

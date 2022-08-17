@@ -1,7 +1,9 @@
+const { response } = require('express');
 var express = require('express');
 const session = require('express-session');
 var router = express.Router();
 const { isAuth } = require('../controller/authController')
+const { mostrar } = require('../controller/gameController')
 
 
 
@@ -17,10 +19,7 @@ router.get('/game', (req, res, next) => isAuth(req, res, next), (req, res) => { 
 });
 
 
-router.get('/ranking', function(req, res, next) {
-  let usersFromMongo = 
-  res.render('ranking', {users: usersFromMongo});
-});
+router.get('/ranking',  (req, res) => mostrar(req,res));
 
 
 module.exports = router;
