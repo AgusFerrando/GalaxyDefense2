@@ -19,3 +19,5 @@ const mostrar = async (req, res) => {
 }
 
 module.exports = { actualizar, mostrar }
+
+
